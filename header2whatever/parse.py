@@ -77,6 +77,10 @@ def process_header(cfg, fname, hooks, data):
         header.rel_fname = relpath(fname, root)
     else:
         header.rel_fname = fname
+        
+    header.rel_fname = header.rel_fname.replace("../../../../../bazel-bin/ntcore/generated/native/include/", "")
+    header.rel_fname = header.rel_fname.replace("../../include/hal/", "")
+    header.rel_fname = header.rel_fname.replace("../../native/include/", "")
 
     header.fname = basename(fname)
 
