@@ -79,8 +79,12 @@ def process_header(cfg, fname, hooks, data):
         header.rel_fname = fname
         
     header.rel_fname = header.rel_fname.replace("../../../../../bazel-bin/ntcore/generated/native/include/", "")
+    header.rel_fname = header.rel_fname.replace("../../../../../wpilibc/src/main/native/include/", "")
+    header.rel_fname = header.rel_fname.replace("../frc", "frc")
+    #/frc/Addres
     header.rel_fname = header.rel_fname.replace("../../include/hal/", "")
     header.rel_fname = header.rel_fname.replace("../../native/include/", "")
+    header.rel_fname = header.rel_fname.replace("../../python/", "")
 
     header.fname = basename(fname)
 
